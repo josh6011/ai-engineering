@@ -21,20 +21,20 @@ Progress tracking for every phase and lesson.
 | 11 | Linux for AI | ✅ |
 | 12 | Debugging & Profiling | ✅ |
 
-## Phase 1: Math Foundations — 🚧
+## Phase 1: Math Foundations — ✅
 
 | # | Lesson | Status |
 |---|--------|--------|
 | 01 | Linear Algebra Intuition | ✅ |
 | 02 | Vectors, Matrices & Operations | ✅ |
-| 03 | Matrix Transformations & Eigenvalues | ⬚ |
-| 04 | Calculus for ML — Derivatives & Gradients | ⬚ |
-| 05 | Chain Rule & Automatic Differentiation | ⬚ |
-| 06 | Probability & Distributions | ⬚ |
-| 07 | Bayes' Theorem & Statistical Thinking | ⬚ |
-| 08 | Optimization — Gradient Descent Family | ⬚ |
-| 09 | Information Theory — Entropy, KL Divergence | ⬚ |
-| 10 | Dimensionality Reduction — PCA, t-SNE, UMAP | ⬚ |
+| 03 | Matrix Transformations & Eigenvalues | ✅ |
+| 04 | Calculus for ML — Derivatives & Gradients | ✅ |
+| 05 | Chain Rule & Automatic Differentiation | ✅ |
+| 06 | Probability & Distributions | ✅ |
+| 07 | Bayes' Theorem & Statistical Thinking | ✅ |
+| 08 | Optimization — Gradient Descent Family | ✅ |
+| 09 | Information Theory — Entropy, KL Divergence | ✅ |
+| 10 | Dimensionality Reduction — PCA, t-SNE, UMAP | ✅ |
 
 ## Phase 2: ML Fundamentals — ⬚
 
@@ -350,6 +350,6 @@ Progress tracking for every phase and lesson.
 
 ---
 
-**Total: 20 phases, 210+ lessons | 17 complete**
+**Total: 20 phases, 210+ lessons | 27 complete**
 
 Want to help? Pick any ⬚ lesson and submit a PR. See [CONTRIBUTING.md](CONTRIBUTING.md).

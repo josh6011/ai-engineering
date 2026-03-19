@@ -68,14 +68,14 @@ You learn AI. You build real things. You ship tools others can use.
 |:---:|--------|:----:|------|
 | 01 | [Linear Algebra Intuition](phases/01-math-foundations/01-linear-algebra-intuition/) | Learn | Python, Julia |
 | 02 | [Vectors, Matrices & Operations](phases/01-math-foundations/02-vectors-matrices-operations/) | Build | Python, Julia |
-| 03 | Matrix Transformations & Eigenvalues | Build | Python, Julia |
-| 04 | Calculus for ML -Derivatives & Gradients | Learn | Python |
-| 05 | Chain Rule & Automatic Differentiation | Build | Python |
-| 06 | Probability & Distributions | Learn | Python |
-| 07 | Bayes' Theorem & Statistical Thinking | Build | Python |
-| 08 | Optimization: Gradient Descent Family | Build | Python |
-| 09 | Information Theory: Entropy, KL Divergence | Learn | Python |
-| 10 | Dimensionality Reduction: PCA, t-SNE, UMAP | Build | Python |
+| 03 | [Matrix Transformations & Eigenvalues](phases/01-math-foundations/03-matrix-transformations/) | Build | Python, Julia |
+| 04 | [Calculus for ML: Derivatives & Gradients](phases/01-math-foundations/04-calculus-for-ml/) | Learn | Python |
+| 05 | [Chain Rule & Automatic Differentiation](phases/01-math-foundations/05-chain-rule-and-autodiff/) | Build | Python |
+| 06 | [Probability & Distributions](phases/01-math-foundations/06-probability-and-distributions/) | Learn | Python |
+| 07 | [Bayes' Theorem & Statistical Thinking](phases/01-math-foundations/07-bayes-theorem/) | Build | Python |
+| 08 | [Optimization: Gradient Descent Family](phases/01-math-foundations/08-optimization/) | Build | Python |
+| 09 | [Information Theory: Entropy, KL Divergence](phases/01-math-foundations/09-information-theory/) | Learn | Python |
+| 10 | [Dimensionality Reduction: PCA, t-SNE, UMAP](phases/01-math-foundations/10-dimensionality-reduction/) | Build | Python |
 
 </details>
 
