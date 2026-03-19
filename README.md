@@ -49,14 +49,14 @@ You learn AI. You build real things. You ship tools others can use.
 | 02 | [Git & Collaboration](phases/00-setup-and-tooling/02-git-and-collaboration/) | Learn | -- |
 | 03 | [GPU Setup & Cloud](phases/00-setup-and-tooling/03-gpu-setup-and-cloud/) | Build | Python |
 | 04 | [APIs & Keys](phases/00-setup-and-tooling/04-apis-and-keys/) | Build | Python, TS |
-| 05 | Jupyter Notebooks | Build | Python |
-| 06 | Python Environments | Build | Python |
-| 07 | Docker for AI | Build | Python |
-| 08 | Editor Setup | Build | -- |
-| 09 | Data Management | Build | Python |
-| 10 | Terminal & Shell | Learn | -- |
-| 11 | Linux for AI | Learn | -- |
-| 12 | Debugging & Profiling | Build | Python |
+| 05 | [Jupyter Notebooks](phases/00-setup-and-tooling/05-jupyter-notebooks/) | Build | Python |
+| 06 | [Python Environments](phases/00-setup-and-tooling/06-python-environments/) | Build | Python |
+| 07 | [Docker for AI](phases/00-setup-and-tooling/07-docker-for-ai/) | Build | Python |
+| 08 | [Editor Setup](phases/00-setup-and-tooling/08-editor-setup/) | Build | -- |
+| 09 | [Data Management](phases/00-setup-and-tooling/09-data-management/) | Build | Python |
+| 10 | [Terminal & Shell](phases/00-setup-and-tooling/10-terminal-and-shell/) | Learn | -- |
+| 11 | [Linux for AI](phases/00-setup-and-tooling/11-linux-for-ai/) | Learn | -- |
+| 12 | [Debugging & Profiling](phases/00-setup-and-tooling/12-debugging-and-profiling/) | Build | Python |
 
 </td></tr>
 </table>
@@ -67,7 +67,7 @@ You learn AI. You build real things. You ship tools others can use.
 | # | Lesson | Type | Lang |
 |:---:|--------|:----:|------|
 | 01 | [Linear Algebra Intuition](phases/01-math-foundations/01-linear-algebra-intuition/) | Learn | Python, Julia |
-| 02 | Vectors, Matrices & Operations | Build | Python, Julia |
+| 02 | [Vectors, Matrices & Operations](phases/01-math-foundations/02-vectors-matrices-operations/) | Build | Python, Julia |
 | 03 | Matrix Transformations & Eigenvalues | Build | Python, Julia |
 | 04 | Calculus for ML -Derivatives & Gradients | Learn | Python |
 | 05 | Chain Rule & Automatic Differentiation | Build | Python |
@@ -105,7 +105,7 @@ You learn AI. You build real things. You ship tools others can use.
 
 | # | Lesson | Type | Lang |
 |:---:|--------|:----:|------|
-| 01 | The Perceptron: Where It All Started | Build | Python |
+| 01 | [The Perceptron: Where It All Started](phases/03-deep-learning-core/01-the-perceptron/) | Build | Python |
 | 02 | Multi-Layer Networks & Forward Pass | Build | Python |
 | 03 | Backpropagation from Scratch | Build | Python |
 | 04 | Activation Functions: ReLU, Sigmoid, GELU & Why | Learn | Python |
@@ -197,7 +197,7 @@ You learn AI. You build real things. You ship tools others can use.
 | # | Lesson | Type | Lang |
 |:---:|--------|:----:|------|
 | 01 | Why Transformers: The Problems with RNNs | Learn | -- |
-| 02 | Self-Attention from Scratch | Build | Python |
+| 02 | [Self-Attention from Scratch](phases/07-transformers-deep-dive/02-self-attention-from-scratch/) | Build | Python |
 | 03 | Multi-Head Attention | Build | Python |
 | 04 | Positional Encoding: Sinusoidal, RoPE, ALiBi | Build | Python |
 | 05 | The Full Transformer: Encoder + Decoder | Build | Python |
@@ -260,7 +260,7 @@ You learn AI. You build real things. You ship tools others can use.
 
 | # | Lesson | Type | Lang |
 |:---:|--------|:----:|------|
-| 01 | Tokenizers: BPE, WordPiece, SentencePiece | Build | Python |
+| 01 | [Tokenizers: BPE, WordPiece, SentencePiece](phases/10-llms-from-scratch/01-tokenizers/) | Build | Python |
 | 02 | Building a Tokenizer from Scratch | Build | Python, Rust |
 | 03 | Data Pipelines for Pre-Training | Build | Python |
 | 04 | Pre-Training a Mini GPT (124M) | Build | Python |
@@ -382,7 +382,7 @@ You learn AI. You build real things. You ship tools others can use.
 
 | # | Lesson | Type | Lang |
 |:---:|--------|:----:|------|
-| 01 | Why Multi-Agent | Learn | -- |
+| 01 | [Why Multi-Agent](phases/16-multi-agent-and-swarms/01-why-multi-agent/) | Learn | -- |
 | 02 | Agent Teams: Roles & Delegation | Build | TS |
 | 03 | Communication Protocols | Build | TS, Rust |
 | 04 | Shared State & Coordination | Build | TS, Rust |
