@@ -90,26 +90,73 @@
     return (project.stages || []).reduce(function (sum, s) { return sum + (s.hours || 0); }, 0);
   }
 
-  function copyButton(text) {
-    return '<button class="pj-copy" type="button" data-copy="' + esc(text) + '" aria-label="Copy command">Copy</button>';
+  function copyButton(text, label) {
+    return '<button class="pj-copy" type="button" data-copy="' + esc(text) + '" aria-label="' + esc(label || 'Copy command') + '">Copy</button>';
   }
 
-  function commandBlock(text) {
-    return '<div class="pj-cmd-wrap"><pre class="pj-cmd"><code>' + esc(text) + '</code></pre>' + copyButton(text) + '</div>';
+  function commandBlock(text, label, copyLabel) {
+    return '<div class="pj-cmd-wrap"><div class="pj-cmd-toolbar"><span>' + esc(label || (text.charAt(0) === '/' ? 'Claude Code' : 'Terminal')) + '</span>' +
+      copyButton(text, copyLabel) + '</div><pre class="pj-cmd"><code>' + esc(text) + '</code></pre></div>';
+  }
+
+  function enhanceCommands() {
+    document.querySelectorAll('pre.pj-cmd').forEach(function (pre) {
+      if (pre.closest('.pj-cmd-wrap')) return;
+      var code = pre.querySelector('code');
+      if (code) pre.outerHTML = commandBlock(code.textContent, pre.getAttribute('data-command-label'), pre.getAttribute('data-copy-label'));
+    });
+  }
+
+  function fallbackCopy(text) {
+    var focused = document.activeElement;
+    var field = document.createElement('textarea');
+    field.value = text;
+    field.setAttribute('readonly', '');
+    field.style.cssText = 'position:fixed;left:-9999px;top:0';
+    document.body.appendChild(field);
+    field.select();
+    try {
+      return document.execCommand('copy');
+    } finally {
+      field.remove();
+      if (focused && focused.focus) focused.focus({ preventScroll: true });
+    }
   }
 
   function bindCopy(scope) {
-    scope.addEventListener('click', function (event) {
+    scope.addEventListener('click', async function (event) {
       var button = event.target.closest('.pj-copy');
-      if (!button) return;
+      if (!button || button.dataset.copyPending === 'true') return;
       var text = button.getAttribute('data-copy');
-      var done = function () {
-        button.textContent = 'Copied';
-        setTimeout(function () { button.textContent = 'Copy'; }, 1400);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, function () {});
+      var block = button.closest('.pj-cmd-wrap, .pj-code');
+      var status = block.querySelector('.pj-copy-status');
+      if (!status) {
+        status = document.createElement('span');
+        status.className = 'pj-copy-status';
+        status.setAttribute('role', 'status');
+        block.appendChild(status);
       }
+      clearTimeout(button.copyTimer);
+      status.textContent = '';
+      button.dataset.copyPending = 'true';
+      var copied = false;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+          copied = true;
+        }
+      } catch (_) {}
+      if (!copied) {
+        try { copied = fallbackCopy(text); } catch (_) {}
+      }
+      delete button.dataset.copyPending;
+      button.textContent = copied ? 'Copied' : 'Copy';
+      status.toggleAttribute('data-success', copied);
+      status.textContent = copied ? 'Command copied.' : 'Copy unavailable. Select the command and copy it manually.';
+      button.copyTimer = setTimeout(function () {
+        button.textContent = 'Copy';
+        if (copied) status.textContent = '';
+      }, 1800);
     });
   }
 
@@ -362,7 +409,6 @@
     });
     showPlanned.addEventListener('change', draw);
     draw();
-    bindCopy(document.getElementById('main'));
   }
 
   function loadFigures(project) {
@@ -542,7 +588,6 @@
       go(idx === -1 ? 0 : idx, false);
     });
 
-    bindCopy(document.getElementById('pjWorkspace'));
     go(stageIndex, false);
   }
 
@@ -556,6 +601,8 @@
     button.textContent = playing ? 'Play recording' : 'Stop recording';
   });
 
+  enhanceCommands();
+  bindCopy(document.getElementById('main'));
   initTheme();
   var page = document.body.getAttribute('data-projects-page');
   if (page === 'catalog') renderCatalog();
